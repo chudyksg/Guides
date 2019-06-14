@@ -1,2 +1,2 @@
 # Guides
-"How to documents"
+"How to guides", notes and code snippets. 
