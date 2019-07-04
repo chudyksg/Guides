@@ -67,6 +67,14 @@ filter_tab = VALUE #( ( 'AA ' ) ( 'LH ' ) ).
 * Apply filters 
 lt_flight_final = FILTER #( lt_flights_all IN filter_tab WHERE carrid = table_line ). 
 ```
+### Move certain fields using FOR LOOP
+```ABAP
+* Loop through and save Plant and Name only
+DATA(lt_plant_name) = VALUE ltt_plant_name( FOR ls_plant IN lt_plant 
+                                            WHERE ( regio EQ lv_regio )
+                                                  ( plant = ls_plant-werks name = ls_plant-name1 ) ).
+```                                                  
+
 ### Move corresponding
 ```ABAP
 DATA: itab1 TYPE STANDARD TABLE OF lty_demo1, 
