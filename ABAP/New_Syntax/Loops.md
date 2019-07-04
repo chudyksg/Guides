@@ -107,6 +107,14 @@ LOOP AT t_customres INTO DATA(ls_cust_2)
       REFERENCE INTO DATA(route_group_2).
 ENDLOOP. 
 ```
-  
-  
+
+### Reduce
+```ABAP
+DATA(lv_lines) = REDUCE i( INIT x = 0 FOR wa IN gt_itab WHERE( F1 = ‘XYZ’ ) NEXT x = x + 1 ).
+
+*Below is the same as code above
+LOOP AT gt_itab INTO ls_itab where F1 = ‘XYZ’.
+  lv_lines = lv_lines + 1.
+ENDLOOP.
+```  
   
