@@ -26,3 +26,49 @@ DATA(WA_BOOKINGS) = IT_BOOKINGS[ CARRID = 'AA'  CONNID = '17'  CUSTTYPE = 'P' ].
 CATCH cx_sy_itab_line_not_found. 
 ENDTRY.  
 ```
+### Initialise Table with values
+```ABAP
+TYPES: BEGIN OF ty_new, 
+        f1 TYPE c, 
+END OF ty_new, 
+
+tty_new TYPE TABLE OF ty_new WITH EMPTY KEY. 
+DATA(it_new) = VALUE tty_new( ( f1 = 'A') ( f1 = 'B') ). 
+```
+### Get Table's entry index
+```ABAP
+DATA(indx) = line_index( it_bookings[ carrid = 'AA' connid = '17'] ). 
+```
+### Filter Table with single values
+```ABAP
+DATA(lt_flight_lh) = FILTER #( lt_flights_all USING KEY carrid WHERE carrid = 'LH ' ). 
+```
+### Filter Table with table of values
+```ABAP
+DATA lt_flights_all TYPE STANDARD TABLE OF spfli WITH NON-UNIQUE SORTED KEY carrid COMPONENTS carrid. 
+DATA lt_flight_final TYPE STANDARD TABLE OF spfli. 
+
+SELECT * FROM spfli INTO TABLE @lt_flights_all. 
+
+* Create a filter internal table with multiple values 
+DATA filter_tab TYPE SORTED TABLE OF scarr-carrid WITH UNIQUE KEY table_line. 
+
+filter_tab = VALUE #( ( 'AA ' ) ( 'LH ' ) ). 
+
+* Apply filters 
+lt_flight_final = FILTER #( lt_flights_all IN filter_tab WHERE carrid = table_line ). 
+```
+### Move corresponding
+```ABAP
+DATA: itab1 TYPE STANDARD TABLE OF lty_demo1, 
+      itab2 TYPE STANDARD TABLE OF lty_demo2. 
+
+itab1 = VALUE #( ( col1 = 'A' col2 = 'B' ) 
+                 ( col1 = 'P' col2 = 'Q' ) 
+                 ( col1 = 'N' col2 = 'P' ) ). 
+
+itab2 = CORRESPONDING #( itab1 ). 
+itab2 = CORRESPONDING #( itab1 EXCEPT COL2 ). 
+itab2 = CORRESPONDING #( itab1 MAPPING COL3 = COL2 EXCEPT COL2 ). 
+```
+
