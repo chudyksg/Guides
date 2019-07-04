@@ -11,6 +11,10 @@ APPEND VALUE #( col1 = 'abc' col2 = '12' col3 = 3 ) TO tab1.
 IF line_exists( my_table[ key = 'A' ] ).  
 ENDIF. 
 ```
+### Get total number of lines in a Table
+```ABAP
+DATA(lv_total_lines) = lines( lt_table ).
+```
 ### Read the Table with Index
 ```ABAP
 TRY. 
