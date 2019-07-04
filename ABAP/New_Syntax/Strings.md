@@ -13,3 +13,8 @@ character_string = |This resulted in return code { sy-subrc }|.
 * Delivery number with conversion
 DATA(ld_message) = |{ ld_delivery_number ALPHA = OUT }|. 
 ```
+### Upper, lower case
+```ABAP
+DATA(uppercase) = to_upper( lowercase ). 
+DATA(lowercase) = to_lower( uppercase ). 
+```
