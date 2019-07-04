@@ -46,11 +46,13 @@ DATA(it_new) = VALUE tty_new( ( f1 = 'A') ( f1 = 'B') ).
 ```ABAP
 DATA(indx) = line_index( it_bookings[ carrid = 'AA' connid = '17'] ). 
 ```
-### Filter Table with single values
+### Filter Table 
+
+* With single values
 ```ABAP
 DATA(lt_flight_lh) = FILTER #( lt_flights_all USING KEY carrid WHERE carrid = 'LH ' ). 
 ```
-### Filter Table with table of values
+* With table of values
 ```ABAP
 DATA lt_flights_all TYPE STANDARD TABLE OF spfli WITH NON-UNIQUE SORTED KEY carrid COMPONENTS carrid. 
 DATA lt_flight_final TYPE STANDARD TABLE OF spfli. 
