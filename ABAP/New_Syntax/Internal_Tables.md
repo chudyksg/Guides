@@ -26,6 +26,13 @@ DATA(WA_BOOKINGS) = IT_BOOKINGS[ CARRID = 'AA'  CONNID = '17'  CUSTTYPE = 'P' ].
 CATCH cx_sy_itab_line_not_found. 
 ENDTRY.  
 ```
+### Modify table using key
+```ABAP
+TRY.
+t_data[ TABLE_LINE = 20 ] = 10.
+  CATCH cx_sy_itab_line_not_found.
+ENDTRY.
+```
 ### Initialise Table with values
 ```ABAP
 TYPES: BEGIN OF ty_new, 
