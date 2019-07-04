@@ -19,7 +19,7 @@ CATCH cx_sy_itab_line_not_found.
 ENDTRY. 
 ```
 
-### Read the Table using  free key. 
+### Read the Table with key 
 ```ABAP
 TRY. 
 DATA(WA_BOOKINGS) = IT_BOOKINGS[ CARRID = 'AA'  CONNID = '17'  CUSTTYPE = 'P' ].  
