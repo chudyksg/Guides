@@ -92,4 +92,14 @@ itab2 = CORRESPONDING #( itab1 ).
 itab2 = CORRESPONDING #( itab1 EXCEPT COL2 ). 
 itab2 = CORRESPONDING #( itab1 MAPPING COL3 = COL2 EXCEPT COL2 ). 
 ```
-
+### Move corresponding for particular entries
+```ABAP
+    e_header-conditions = VALUE #( FOR condition IN i_head_detail-conditions WHERE ( kschl <> 'MWST' )
+  (
+    CORRESPONDING #( condition MAPPING type = kschl
+                                       rate = kbetr
+                                       rate_unit = koein
+                                       unit = koei1
+                                       description = vtext )
+  ) ).
+```
