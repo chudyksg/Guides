@@ -99,7 +99,7 @@ itab2 = CORRESPONDING #( BASE ( itab2 ) itab1 ).
 
 ### Move corresponding using key
 ```ABAP
-itab1 = CORRESPONDING #( itab1 FROM itab2 USING KEY mkey b1 = a1 b2 = a2
+itab1 = CORRESPONDING #( itab1 FROM itab2 USING KEY mkey b1 = a1 b2 = a2 ).
 ```
 
 ### Move corresponding for particular entries
