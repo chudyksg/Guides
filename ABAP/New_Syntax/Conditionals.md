@@ -13,3 +13,11 @@ DATA(has_entries) = xsdbool( line IS NOT INITIAL ).
 IF has_entries = abap_true.
 ENDIF.
 ```
+
+### COND Statement
+```ABAP
+DATA(lv_text) = COND text30(
+     WHEN lv_vehicle ='01' AND lv_type = 'C' THEN 'Toyota'
+     WHEN lv_vehicle ='02' AND lv_type = 'C' THEN 'Chevy'
+     WHEN lv_vehicle ='03' AND lv_type = 'C' THEN 'Range Rover').
+```     
