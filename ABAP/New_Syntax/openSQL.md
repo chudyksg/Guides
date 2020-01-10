@@ -15,7 +15,7 @@ ENDSELECT.
 ```ABAP
 DATA: lt_sflight TYPE TABLE OF sflight.
 
- CONSTANTS: lc_carrid TYPE s_carr_id VALUE 'UA',
+CONSTANTS: lc_carrid TYPE s_carr_id VALUE 'UA',
             lc_connid TYPE s_conn_id VALUE '941'.
 
  SELECT carrid, connid, price, seatsocc_b, seatsocc_f,
@@ -27,6 +27,8 @@ DATA: lt_sflight TYPE TABLE OF sflight.
 ```
 
 ### Inner Join Column Specification
+```ABAP
 SELECT scarr~carrname, spfli~*, scarr~url
         FROM scarr INNER JOIN spfli ON scarr~carrid = spfli~carrid
         INTO TABLE @DATA(result).
+```        
