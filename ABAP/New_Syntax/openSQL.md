@@ -32,3 +32,12 @@ SELECT scarr~carrname, spfli~*, scarr~url
         FROM scarr INNER JOIN spfli ON scarr~carrid = spfli~carrid
         INTO TABLE @DATA(result).
 ```        
+### Check for record existence
+```ABAP
+SELECT SINGLE @abap_true FROM t100
+WHERE sprsl = @sy-langu AND arbgb = ‘SABAPDEMOS’
+INTO @DATA(result).
+
+IF sy-subrc = 0.
+ENDIF.
+```
