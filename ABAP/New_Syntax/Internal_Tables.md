@@ -30,6 +30,12 @@ DATA(WA_BOOKINGS) = IT_BOOKINGS[ CARRID = 'AA'  CONNID = '17'  CUSTTYPE = 'P' ].
 CATCH cx_sy_itab_line_not_found. 
 ENDTRY.  
 ```
+### Read the Table with uncertain result
+```ABAP
+* We don't need TRY CATCH in this case
+DATA(account) = VALUE #( accounts[ id = '4711' ] OPTIONAL ).
+```
+
 ### Modify table using key
 ```ABAP
 TRY.
