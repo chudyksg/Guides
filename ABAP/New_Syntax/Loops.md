@@ -107,6 +107,16 @@ LOOP AT t_customres INTO DATA(ls_cust_2)
       REFERENCE INTO DATA(route_group_2).
 ENDLOOP. 
 ```
+* Loop with control break
+```ABAP
+LOOP AT accounts INTO DATA(account) GROUP BY grouping_id.
+  " once per group before group ...
+  LOOP AT GROUP account INTO DATA(account_group).
+    " for each group member ...
+  ENDLOOP.
+  " once per group after group ...
+ENDLOOP.
+```
 
 ### Reduce
 ```ABAP
