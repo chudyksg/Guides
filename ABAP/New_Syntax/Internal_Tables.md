@@ -76,6 +76,9 @@ filter_tab = VALUE #( ( 'AA ' ) ( 'LH ' ) ).
 
 * Apply filters 
 lt_flight_final = FILTER #( lt_flights_all IN filter_tab WHERE carrid = table_line ). 
+
+* Apply filters using except
+lt_flight_final = FILTER #( lt_flights_all EXCEPT IN filter_tab WHERE carrid = table_line ).
 ```
 ### Move certain fields using FOR LOOP
 ```ABAP
