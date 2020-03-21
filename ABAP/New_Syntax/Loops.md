@@ -109,13 +109,22 @@ ENDLOOP.
 ```
 * Loop with control break
 ```ABAP
-LOOP AT accounts INTO DATA(account) GROUP BY grouping_id.
-  " once per group before group ...
-  LOOP AT GROUP account INTO DATA(account_group).
-    " for each group member ...
-  ENDLOOP.
-  " once per group after group ...
-ENDLOOP.
+ DATA(out) = cl_demo_output=>new( ).
+    DATA members LIKE flights.
+    LOOP AT flights INTO DATA(wa)
+         GROUP BY ( tz_from = get_time_zone( wa-airpfrom )
+                    tz_to   = get_time_zone( wa-airpto )
+                    size = GROUP SIZE index = GROUP INDEX )
+         ASSIGNING FIELD-SYMBOL(<group>).
+      out->write( name = `Group key`
+                  data = <group> ).
+      CLEAR members.
+      LOOP AT GROUP <group> ASSIGNING FIELD-SYMBOL(<member>).
+        members = VALUE #( BASE members ( <member> ) ).
+      ENDLOOP.
+      out->write( members )->line( ).
+    ENDLOOP.
+    out->display( ).
 ```
 
 * Another loop group by
