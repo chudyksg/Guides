@@ -118,6 +118,18 @@ LOOP AT accounts INTO DATA(account) GROUP BY grouping_id.
 ENDLOOP.
 ```
 
+* Another loop group by
+```ABAP
+    LOOP AT me->go_data->gt_processing_log INTO DATA(ls_processing_log)
+                                           WHERE icon = me->go_data->gc_red_light
+                                           GROUP BY ( requisition = ls_processing_log-requisition  )
+                                           ASSIGNING FIELD-SYMBOL(<group>).
+
+      LOOP AT GROUP <group> INTO DATA(ls_error_log).
+      ENDLOOP.
+    ENDLOOP.
+```
+
 ### Reduce
 ```ABAP
 DATA(lv_lines) = REDUCE i( INIT x = 0 FOR wa IN gt_itab WHERE( F1 = 'XYZ' ) NEXT x = x + 1 ).
