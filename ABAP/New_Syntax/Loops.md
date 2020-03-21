@@ -105,8 +105,61 @@ LOOP AT t_customres INTO DATA(ls_cust_2)
       ASCENDING
       WITHOUT MEMBERS
       REFERENCE INTO DATA(route_group_2).
+      
+       WRITE: / route_group_2->route.
 ENDLOOP. 
 ```
+
+* Usage of MEMBERS, SIZE and INDEX
+```ABAP
+* Creates a group of Route
+*   with members as all fields which matches the group
+LOOP AT t_customres INTO DATA(ls_cust1)
+     GROUP BY  ( route = ls_cust1-route
+                 SIZE  = GROUP SIZE
+                 INDEX = GROUP INDEX )
+      ASCENDING
+      REFERENCE INTO DATA(route_group).
+ 
+  WRITE: / 'Group', route_group->index.
+  WRITE: / route_group->route.
+ 
+  DATA(members) = VALUE tt_customers( ).
+  LOOP AT GROUP route_group ASSIGNING FIELD-SYMBOL(<route>).
+    members = VALUE #( BASE members ( <route> ) ).
+  ENDLOOP.
+ 
+  LOOP AT members INTO DATA(ls_member).
+    WRITE: /(5)", ls_member-customer, ls_member-name, ls_member-city.
+  ENDLOOP.
+  WRITE: /(5)", 'Group size ', route_group->size.
+  SKIP 2.
+ENDLOOP.
+```
+*Group By without explicit Result variable
+```ABAP
+ 
+* Creates a group of Route and City
+*  but without using the Group result
+LOOP AT t_customres INTO DATA(ls_cust)
+     GROUP BY  ( route = ls_cust-route
+                 city  = ls_cust-city )
+      ASCENDING.
+ 
+  WRITE: / ls_cust.
+ 
+  DATA(members) = VALUE tt_customers( ).
+  LOOP AT GROUP ls_cust ASSIGNING FIELD-SYMBOL(<route>).
+    members = VALUE #( BASE members ( <route> ) ).
+  ENDLOOP.
+ 
+  LOOP AT members INTO DATA(ls_member).
+    WRITE: /(5)", ls_member-customer, ls_member-name.
+  ENDLOOP.
+  SKIP 2.
+ENDLOOP.
+```
+
 * Loop with control break
 ```ABAP
  DATA(out) = cl_demo_output=>new( ).
