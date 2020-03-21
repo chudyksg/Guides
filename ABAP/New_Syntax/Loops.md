@@ -136,7 +136,7 @@ LOOP AT t_customres INTO DATA(ls_cust1)
   SKIP 2.
 ENDLOOP.
 ```
-*Group By without explicit Result variable
+* Group By without explicit Result variable
 ```ABAP
  
 * Creates a group of Route and City
