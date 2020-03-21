@@ -160,7 +160,7 @@ LOOP AT t_customres INTO DATA(ls_cust)
 ENDLOOP.
 ```
 
-* Loop with control break
+* Another grouping example
 ```ABAP
  DATA(out) = cl_demo_output=>new( ).
     DATA members LIKE flights.
@@ -178,18 +178,6 @@ ENDLOOP.
       out->write( members )->line( ).
     ENDLOOP.
     out->display( ).
-```
-
-* Another loop group by
-```ABAP
-    LOOP AT me->go_data->gt_processing_log INTO DATA(ls_processing_log)
-                                           WHERE icon = me->go_data->gc_red_light
-                                           GROUP BY ( requisition = ls_processing_log-requisition  )
-                                           ASSIGNING FIELD-SYMBOL(<group>).
-
-      LOOP AT GROUP <group> INTO DATA(ls_error_log).
-      ENDLOOP.
-    ENDLOOP.
 ```
 
 ### Reduce
