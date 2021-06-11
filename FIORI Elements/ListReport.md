@@ -17,7 +17,8 @@
 }
 ```
 ### Semantic Key
-Field appears in BOLD in the table
+Field appears in BOLD in the table 
+Has to be specified in CDS view
 ```
 @ObjectModel.semanticKey: ['TravelID']
 ```
@@ -36,6 +37,7 @@ OverallStatus,
 ```
 
 ### Table Field - Key Value Description
+Object Model has to be added in the CDS view
 ```
 @ObjectModel.text.element: ['AgencyName']
 AgencyID,
