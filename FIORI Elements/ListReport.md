@@ -69,6 +69,6 @@ CustomerID,
 
 ### Drop Down menu fo Value Help
 ```
--- Add this in the CDS views that is used for Value Help
+Add this in the CDS views that is used for Value Help
 @ObjectModel.resultSet.sizeCategory: #XS 
 ```
