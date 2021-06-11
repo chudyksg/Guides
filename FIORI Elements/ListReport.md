@@ -17,6 +17,7 @@
 }
 ```
 ### Semantic Key
+Field appears in BOLD in the table
 ```
 @ObjectModel.semanticKey: ['TravelID']
 ```
