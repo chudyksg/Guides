@@ -3,15 +3,22 @@
 @UI: {
     headerInfo: {
         typeName: 'Travel',
-        typeNamePlural: 'Travels'
+        typeNamePlural: 'Travels',
+           title: {
+            type: #STANDARD, value: 'Description' --Title on object page header
+        },
+        description: {
+            value: 'TravelID'                     --Description on object page header
+        }
     },
+
     presentationVariant: [{
         sortOrder: [{
-            by: 'LocalLastChangedAt',   --Sorting of table 
+            by: 'LocalLastChangedAt',             --Initial table sorting
             direction: #DESC
         }],
         visualizations: [{
-            type: #AS_LINEITEM           --Applies to list report table
+            type: #AS_LINEITEM                    --Applies to list report table
         }]
     }]
 }
