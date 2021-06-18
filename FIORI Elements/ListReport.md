@@ -195,6 +195,30 @@ AgencyID;
 CustomerID,
 ```
 
+### Value Help - Additional Bindings
+```
+      @Consumption.valueHelpDefinition: [ {
+        entity: {
+          name: 'zi_fe_flig_000013',
+          element: 'ConnectionID'
+        },
+        additionalBinding: [ {
+          localElement: 'FlightDate',
+          element: 'FlightDate'
+        }, {
+          localElement: 'CarrierID',
+          element: 'AirlineID'
+        }, {
+          localElement: 'FlightPrice',
+          element: 'Price'
+        }, {
+          localElement: 'CurrencyCode',
+          element: 'CurrencyCode'
+        } ]
+      } ]
+      ConnectionID,
+ ```
+
 ### Drop Down menu fo Value Help
 ```
 Add this in the CDS views that is used for Value Help
