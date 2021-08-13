@@ -19,4 +19,34 @@
 				changeSetId: "CreateSO"
 			});
 		},
+		
+		_pad: function(n, width, z) {
+			z = z || '0';
+			n = n + '';
+			return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+		},
+
+		_showSOCreatedSuccess: function(oData, oResponse){
+			var oResourceBundle = this.getOwnerComponent().getModel("i18n").getResourceBundle();
+			var sMessage = oResourceBundle.getText("SalesOrderCreated", [oData.SalesOrderID]);
+			
+			MessageBox.show(sMessage, {
+				icon: MessageBox.Icon.SUCCESS,
+				title: oResourceBundle.getText("sucTitle"),
+				actions: [MessageBox.OK],
+				onClose: function(oAction){
+					this.getOwnerComponent().getRouter().navTo("main", {}, true);
+				}.bind(this)
+			});
+		},
+		
+		_showSOCreatedError: function(oError){
+			try{
+				var oMessage = JSON.parse(oError.responseText);
+			MessageToast.show(oMessage.error.messae.value);
+			}catch(err){
+				MessageToast.show(oError.responseText);
+			}
+			
+		}		
 ```
