@@ -6,4 +6,5 @@
 •	SWEL – Event trace\
 •	SWELS – Switch event trace on/off\
 •	SCDO – Change documents objects create/change/display\
-•	SWEC - events to change document assignment\
+•	SWEC - Events to change document assignment\
+•	SWE2 - Event type linkage (config)
