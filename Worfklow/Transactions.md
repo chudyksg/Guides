@@ -8,4 +8,5 @@
 •	SCDO – Change documents objects create/change/display\
 •	SWEC - Events to change document assignment\
 •	SWE2 - Event type linkage (config)\
-• SWUE - Create event manually (for testing)
+• SWUE - Create event manually (for testing)\
+• SWWA - Configure Work Item Deadline monitoring
