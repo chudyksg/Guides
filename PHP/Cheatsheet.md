@@ -4,7 +4,7 @@
 echo "My first PHP script!";
 ?>
 ```
-##Comments
+## Comments
 ```php
 <?php
 // This is a single-line comment
