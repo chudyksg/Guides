@@ -10,4 +10,5 @@
 •	SWE2 - Event type linkage (config)\
 • SWUE - Create event manually (for testing)\
 • SWWA - Configure Work Item Deadline monitoring\
-• PFAC - Workflow Rules
+• PFAC - Workflow Rules\
+• SWI1_RULE -  re-run agent determination rules for workflow task
