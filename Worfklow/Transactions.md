@@ -9,4 +9,5 @@
 •	SWEC - Events to change document assignment\
 •	SWE2 - Event type linkage (config)\
 • SWUE - Create event manually (for testing)\
-• SWWA - Configure Work Item Deadline monitoring
+• SWWA - Configure Work Item Deadline monitoring\
+• PFAC - Workflow Rules
