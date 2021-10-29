@@ -50,7 +50,7 @@ _Agency.Name as AgencyName,
 ### Table Field - Show Description Only
 ```
 @UI.lineItem: [{ position: 80 }]
-@UI.textArrangement: #TEXT_ONLY
+@UI.textArrangement: #TEXT_ONLY //Omits the key
 OverallStatus;
 ```
 ### Table Field - Criticiality
