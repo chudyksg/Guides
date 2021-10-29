@@ -1,3 +1,18 @@
+### Header Info
+```
+@UI: {
+    headerInfo: {
+        typeName: 'Travel',
+        typeNamePlural: 'Travels',
+        title: {
+            type: #STANDARD, value: 'Description' --Title on object page header
+        },
+        description: {
+            value: 'TravelID'  --Description on object page header
+        }
+    },
+```
+
 ### Header Facet - Data Point
 ```
     @UI.facet: [
