@@ -38,3 +38,13 @@ The below annotations should be added to the consumption header view
     
 }
 ```
+### Header CDS to Item CDS composition annotation
+```
+@ObjectModel.association.type: [#TO_COMPOSITION_CHILD]
+      _ServEntrySheetItem
+```
+### Item CDS to Header CDS composition annotation
+```
+@ObjectModel.association.type: [#TO_COMPOSITION_PARENT, #TO_COMPOSITION_ROOT]
+_ServiceEntrySheet,
+```
