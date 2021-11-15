@@ -19,3 +19,22 @@ The below enables transaction processing with draft. To be implemented on the he
     entityChangeStateId: 'LastChangedDate'
 }
 ```
+The below annotations should be added to the consumption header view
+```
+@Metadata.allowExtensions: true
+    
+@ObjectModel: {
+    
+    -- Annotations for transactional processing
+    semanticKey: 'ServiceEntrySheet',
+    compositionRoot: true,  
+    transactionalProcessingDelegated: true, 
+    createEnabled: true,
+    deleteEnabled: true,
+    updateEnabled: true,
+    
+    -- Additional annotation for draft enablement    
+    draftEnabled: true   
+    
+}
+```
