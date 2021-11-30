@@ -130,4 +130,12 @@ SupplierName,
 @ObjectModel.mandatory: true
 ```
 
+### Searchable fields
+```
+@Search.searchable: true //at the top of the CDS view
+
+ @Search.defaultSearchElement: true
+ @Search.fuzzinessThreshold : 0.7
+ key _PurchaseOrderItem.PurchaseOrder
+```
 
