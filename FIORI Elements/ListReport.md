@@ -71,6 +71,13 @@ AgencyID;
 @Consumption.valueHelpDefinition: [{ entity : {name: '/DMO/I_Customer', element: 'CustomerID'  } }]
 CustomerID,
 ```
+
+### Value Help through association
+```
+@Consumption.valueHelp: '_ServiceOrderTypeVH'
+ServiceOrderType,
+```      
+
 ### Value Help - Additional Bindings
 ```
       @Consumption.valueHelpDefinition: [ {
@@ -98,6 +105,19 @@ CustomerID,
 ```
 Add this in the CDS views that is used for Value Help
 @ObjectModel.resultSet.sizeCategory: #XS 
+```
+
+### Defining Text Elements
+-Through text association
+```
+@Consumption.valueHelp: '_ServiceOrderTypeVH'
+ServiceOrderType,
+```
+-Text Elements in the Same Entity
+```
+@ObjectModel.text.element: ['SupplierName']
+Supplier,
+SupplierName,
 ```
 
 ### Read only
