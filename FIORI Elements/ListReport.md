@@ -99,3 +99,15 @@ CustomerID,
 Add this in the CDS views that is used for Value Help
 @ObjectModel.resultSet.sizeCategory: #XS 
 ```
+
+### Read only
+```
+@ObjectModel.readOnly: true
+```
+
+### Mandatory
+```
+@ObjectModel.mandatory: true
+```
+
+
