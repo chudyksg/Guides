@@ -41,6 +41,30 @@ TotalPrice;
 @UI.dataPoint: { qualifier: 'StatusData', title: 'Status', criticality: 'OverallStatusCriticality' }
 OverallStatus;
 ```
+
+### Header Facet - Data Point - progress bar
+In the main View annotation
+```
+ @UI.facet: [
+    {
+           id: 'BudgetSpend',
+           targetQualifier: 'BudgetSpend',
+           targetElement: '_SES_OrderValue', //Reference to the association
+           type: #DATAPOINT_REFERENCE,   
+           purpose: #HEADER,           
+           position: 40                       
+       }]
+```
+In the associated CDS View annotation
+```
+@UI.dataPoint: { visualization: #PROGRESS ,
+               targetValueElement: 'OrderValue',
+               qualifier: 'BudgetSpend',
+               title: 'Budget Spend',
+               criticality: 'SpendCriticality' }
+ServiceEntries;
+```
+
 ### Standard Facet
 ```
   @UI.facet: [
