@@ -65,7 +65,7 @@ In the associated CDS View annotation
 ServiceEntries;
 ```
 
-### Standard Facet
+### Standard Facet - identification reference
 ```
   @UI.facet: [
     {
@@ -80,6 +80,23 @@ ServiceEntries;
 @UI.identification: [{ position: 10 }]
 Description;    
 ```  
+
+### Header Facet - identification reference
+```
+  @UI.facet: [
+    {
+         label: 'Administration',
+         id: 'HeaderDetails',
+         purpose: #HEADER,
+         type: #IDENTIFICATION_REFERENCE,
+         position: 10
+    }
+  ]
+  
+@UI.identification: [{ position: 10 }]
+CreatedBy;    
+```  
+
 
 ###  Fieldgroup Reference Facet 
 ```
