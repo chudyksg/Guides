@@ -101,6 +101,14 @@ ServiceOrderType,
       } ]
       ConnectionID,
  ```
+ ### Value Help - Additional Bindings - Filter
+ ```
+    @Consumption.valueHelpDefinition: [{ entity : {name: '/ABSOFT/I_ServiceOrderItem', element: 'ServiceOrder'},
+                     additionalBinding: [{ localElement: 'ServiceOrderType', element: 'ServiceOrderType', usage: #FILTER }, //This value filters the entries in the value help
+                                         { localElement: 'ServiceOrderItem', element: 'ServiceOrderItem' }
+                                          ] }] 
+ ```
+ 
 ### Drop Down menu fo Value Help
 ```
 Add this in the CDS views that is used for Value Help
