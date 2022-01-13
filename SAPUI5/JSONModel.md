@@ -13,7 +13,7 @@ sap.ui.getCore().setModel(oModel, 'AppState'); // Set on global level
 ```
 
 ### Change model property
-```javasacript
+```
 var oModel = sap.ui.getCore().getModel("AppState");
 if (oModel.getProperty("/EDIT_MODE")) {
     oModel.setProperty("/EDIT_MODE", false);
