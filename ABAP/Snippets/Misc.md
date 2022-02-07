@@ -1,4 +1,4 @@
-### Submit RHITNE30
+### Submit RHINTE30
 ```
 FORM update_pa_om_integration  USING i_pernr TYPE pernr_d.
   DATA stamp TYPE sy-uzeit.
