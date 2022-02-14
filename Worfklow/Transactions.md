@@ -1,6 +1,7 @@
 •	PFTC - Workflow Builder\
 •	SWDD – Workflow Builder (more popular)\
 •	SWIA – Check workflow log\
+• SWI1 -  Worfklow log\
 •	SWO1 – Business object repository\
 •	SE24 – ABAP Business object\
 •	SWEL – Event trace\
@@ -11,4 +12,7 @@
 • SWUE - Create event manually (for testing)\
 • SWWA - Configure Work Item Deadline monitoring\
 • PFAC - Workflow Rules\
-• SWI1_RULE -  re-run agent determination rules for workflow task
+• OOCU_RESP - Workflow Rules - Responsibility\
+• SWI1_RULE -  re-run agent determination rules for workflow task\
+
+
