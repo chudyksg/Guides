@@ -8,5 +8,5 @@
 * Approve Purchase Orders - package - S_ODATA_EPMRA_PO_APV
 * Procurement Overview - package - S_ODATA_EPMRA_OVERVIEW
 * Post Goods Receipt - package - S_ODATA_EPMRA_GR_POST
-* Manage POs -  package - S_ODATA_EPMRA_PO_MANR
+* Manage POs -  package - S_ODATA_EPMRA_PO_MAN
 * SO Analysis - package S_ODATA_EPMRA_SO_ANA
