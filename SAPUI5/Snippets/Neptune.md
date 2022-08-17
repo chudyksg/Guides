@@ -26,3 +26,17 @@ sap.ui.getCore().attachInit(function(data, navObj) {
 //Then call it like this
 sap.z.ZUI_NAD_MM_SHOPPING_CART.OCIimport();
 ```
+### Expression binding
+JSON Model
+```
+{AppState>/EDIT_MODE}
+```
+Table is bound - provide field name 
+```
+{= ${TYPE} === 'ZM01'}
+```
+
+Structure is bound - provide field name 
+```
+{= ${/TYPE} === 'ZM01'}
+```
