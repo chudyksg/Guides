@@ -40,3 +40,10 @@ Structure is bound - provide field name
 ```
 {= ${/TYPE} === 'ZM01'}
 ```
+JSON Model based on two properties (OR)
+```
+{= ${AppState>/EDIT_MODE} || ${AppState>/PROCESS_MODE}  ? 'MultiSelect' : 'None' }
+
+{= ${AppState>/EDIT_MODE} || ${AppState>/PROCESS_MODE}  }
+```
+
