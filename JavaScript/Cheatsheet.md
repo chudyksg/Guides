@@ -26,4 +26,11 @@ arr.shift();
 
 //Add element at the beginning
 arr.unshift(0);
+
+//Check for existence
+if (typeof objectToBeTested != "undefined")
+    // object exists
+else
+    // object does not exist
+
 ```
