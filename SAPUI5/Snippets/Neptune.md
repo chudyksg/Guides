@@ -23,18 +23,18 @@ sap.ui.getCore().attachInit(function(data, navObj) {
      }
  });
  
+ //Then call it like this
+sap.z.ZUI_NAD_APP_NAME.doUpload();
+ ```
  ### Pass temporary data to dialog
  ```Javascript
 //Pass Data to dialog dialogObjectName.data("ParameterName", Value);
  dialogObjectName.data("ParameterName", Value);
  
- //Read Data from dialog
+ //Read Data assigned to dialog
  let value =  dialogObjectName.data("ParameterName");
  ```
 
-//Then call it like this
-sap.z.ZUI_NAD_APP_NAME.doUpload();
-```
 ### Expression binding
 JSON Model
 ```
