@@ -22,9 +22,18 @@ sap.ui.getCore().attachInit(function(data, navObj) {
          };
      }
  });
+ 
+ ### Pass temporary data to dialog
+ ```Javascript
+//Pass Data to dialog dialogObjectName.data("ParameterName", Value);
+ dialogObjectName.data("ParameterName", Value);
+ 
+ //Read Data from dialog
+ let value =  dialogObjectName.data("ParameterName");
+ ```
 
 //Then call it like this
-sap.z.ZUI_NAD_MM_SHOPPING_CART.OCIimport();
+sap.z.ZUI_NAD_APP_NAME.doUpload();
 ```
 ### Expression binding
 JSON Model
