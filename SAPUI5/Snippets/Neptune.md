@@ -37,22 +37,30 @@ sap.z.ZUI_NAD_APP_NAME.doUpload();
 
 ### Expression binding
 JSON Model
-```
+```Javascript
 {AppState>/EDIT_MODE}
 ```
 Table is bound - provide field name 
-```
+```Javascript
 {= ${TYPE} === 'ZM01'}
 ```
 
 Structure is bound - provide field name 
-```
+```Javascript
 {= ${/TYPE} === 'ZM01'}
 ```
 JSON Model based on two properties (OR)
-```
+```Javascript
 {= ${AppState>/EDIT_MODE} || ${AppState>/PROCESS_MODE}  ? 'MultiSelect' : 'None' }
 
 {= ${AppState>/EDIT_MODE} || ${AppState>/PROCESS_MODE}  }
 ```
+### Dialog callback function
+```Javascript
+// Pass the function to the dialog
+dlgAssignTechnician.callbackFunction = assignOperTechnician.bind(this);
+dlgAssignTechnician.open();
 
+//Then call it in the OK button
+dlgAssignTechnician.callbackFunction();
+```
