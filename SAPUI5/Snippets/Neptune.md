@@ -66,7 +66,7 @@ dlgAssignTechnician.callbackFunction();
 ```
 
 ### Use promises for two or more AJAX calls
-```
+```Javascript
    App.setBusy(true);
         Promise.all([getOnlineInitList(), getOnlineInitSearchHelps()]).then(function() {
             Notif.createNotification(oNotifDetails);
