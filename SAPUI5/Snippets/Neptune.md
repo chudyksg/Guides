@@ -64,3 +64,15 @@ dlgAssignTechnician.open();
 //Then call it in the OK button
 dlgAssignTechnician.callbackFunction();
 ```
+
+### Use promises for two or more AJAX calls
+```
+   App.setBusy(true);
+        Promise.all([getOnlineInitList(), getOnlineInitSearchHelps()]).then(function() {
+            Notif.createNotification(oNotifDetails);
+            App.setBusy(false);
+        }).catch(function(reason) {
+            App.setBusy(false);
+            onAjaxError();
+        });
+```
