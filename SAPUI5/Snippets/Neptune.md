@@ -76,3 +76,28 @@ dlgAssignTechnician.callbackFunction();
             onAjaxError();
         });
 ```
+
+### Find tree table model data suboordinates
+```Javascript
+let oTableData = modelTreeTable.getData();
+let aSubordinates = this.findSubordinates(oTableData.children[0], object.OBJECT_ID);
+ 
+    findSubordinates: function(obj, id) {
+        let subordinates = [];
+        if (obj.OBJECT_ID === id) {
+            if (obj.children) {
+                obj.children.forEach(child => {
+                    subordinates.push(child);
+                    subordinates = subordinates.concat(this.findSubordinates(child, child.OBJECT_ID));
+                });
+            }
+        } else {
+            if (obj.children) {
+                obj.children.forEach(child => {
+                    subordinates = subordinates.concat(this.findSubordinates(child, id));
+                });
+            }
+        }
+        return subordinates;
+    },
+```    
